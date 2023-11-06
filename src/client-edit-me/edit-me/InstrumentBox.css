@@ -1,0 +1,48 @@
+.instrument-box {
+  display: flex;
+  padding: 0.6rem 1rem;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid #333334;
+}
+
+.instrument-box:hover {
+  background-color: #282d39;
+}
+
+.instrument-box img.logo {
+  width: 1.4rem;
+  height: 1.4rem;
+  aspect-ratio: 1;
+  border-radius: 100rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.instrument-box .forex-logo {
+  display: flex;
+  position: relative;
+}
+
+.instrument-box .forex-logo img {
+  scale: 0.8;
+}
+
+.instrument-box .forex-logo img:first-of-type {
+  transform: translate(30%, 10%);
+  z-index: 2;
+}
+.instrument-box .forex-logo img:last-of-type {
+  transform: translate(-30%, -10%);
+}
+
+.instrument-box span.name {
+  white-space: nowrap;
+  font-weight: 700;
+  font-size: medium;
+}
+
+.instrument-box span:not(.name) {
+  font-size: smaller;
+  font-variant-numeric: tabular-nums;
+}

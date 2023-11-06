@@ -1,3 +1,59 @@
 /**
  * ✅ You can edit this file to add your own styles.
  */
+
+:root {
+  --ticker-scroll-duration: 20s;
+}
+
+.instrument-reel {
+  display: flex;
+  background: #1d222c;
+  border: 1px solid #333334;
+  width: 100%;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.instrument-reel .wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.instrument-reel .content {
+  display: flex;
+}
+
+.instrument-reel span.loading {
+  padding: 0.5rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .instrument-reel .content:nth-of-type(odd) {
+    animation: scrolling_head var(--ticker-scroll-duration) infinite linear;
+    animation-delay: calc(var(--ticker-scroll-duration) / -2);
+  }
+
+  .instrument-reel .content:nth-of-type(even) {
+    animation: scrolling_tail var(--ticker-scroll-duration) infinite linear;
+    animation-delay: calc(var(--ticker-scroll-duration) * -1);
+  }
+}
+
+@keyframes scrolling_head {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scrolling_tail {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
+}
